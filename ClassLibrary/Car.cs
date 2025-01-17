@@ -18,7 +18,7 @@
             FuelTank = fuelTank;
         }
 
-        public virtual void StartEngine()
+        public void StartEngine()
         {
             if (!Engine.IsRunning)
             {
