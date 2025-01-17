@@ -1,4 +1,4 @@
-﻿using ClassLibrary;
+﻿using Classes;
 
 //var manufacturerFord = new Manufacturer("Ford", [new Factory("Paris"), new Factory("New York")]);
 
@@ -9,7 +9,7 @@
 //    Console.WriteLine($" - {factory.Location}");
 //}
 
-var myCar = new Car("Ford", "Fiesta", "white", new Engine(999, 100), new FuelTank("petrol", 42));
+var myCar = new Car("Ford", "Fiesta", "white", 1104, new Engine(999, 100), new FuelTank("petrol", 42));
 
 Console.WriteLine(myCar.Engine.IsRunning);
 

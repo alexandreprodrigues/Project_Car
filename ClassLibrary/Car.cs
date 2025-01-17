@@ -1,4 +1,4 @@
-﻿namespace ClassLibrary
+﻿namespace Classes
 {
     public class Car
     {
@@ -9,11 +9,12 @@
         public Engine Engine { get; set; }
         public FuelTank FuelTank { get; set; }
 
-        public Car(string brand, string model, string color, Engine engine, FuelTank fuelTank)
+        public Car(string brand, string model, string color, double weight, Engine engine, FuelTank fuelTank)
         {
             Brand = brand;
             Model = model;
             Color = color;
+            Weight = weight;
             Engine = engine;
             FuelTank = fuelTank;
         }

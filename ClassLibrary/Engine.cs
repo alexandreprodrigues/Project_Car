@@ -1,4 +1,4 @@
-﻿namespace ClassLibrary
+﻿namespace Classes
 {
     public class Engine
     {

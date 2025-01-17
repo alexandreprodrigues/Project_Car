@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainApp", "MainApp\MainApp.csproj", "{11A02E3F-F492-4A9C-85FB-05C6816F99EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{9100E750-CD31-482E-BE4C-860E017A94FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes", "ClassLibrary\Classes.csproj", "{9100E750-CD31-482E-BE4C-860E017A94FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{CCC313CC-0E16-4A5E-96F7-9B57E348123D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9100E750-CD31-482E-BE4C-860E017A94FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9100E750-CD31-482E-BE4C-860E017A94FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9100E750-CD31-482E-BE4C-860E017A94FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCC313CC-0E16-4A5E-96F7-9B57E348123D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCC313CC-0E16-4A5E-96F7-9B57E348123D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCC313CC-0E16-4A5E-96F7-9B57E348123D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCC313CC-0E16-4A5E-96F7-9B57E348123D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
