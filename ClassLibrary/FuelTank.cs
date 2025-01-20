@@ -23,7 +23,7 @@ namespace Classes
             }
             else
             {
-                CurrentLevel += amount;
+                CurrentLevel += amount;   //change so it can convert capacity to percentage of battery
 
                 Console.WriteLine($"Added {amount} litters to the tank. Tank: {CurrentLevel}");
             }
