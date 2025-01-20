@@ -2,11 +2,11 @@
 {
     public class Engine
     {
-        public double EngineSize { get; set; }
+        public double? EngineSize { get; set; }
         public double HorsePower { get; set; }
-        public bool IsRunning { get; set;}
+        public bool IsRunning { get; set; }
 
-        public Engine(double engineSize, double horsePower)
+        public Engine(double? engineSize, double horsePower)
         {
             EngineSize = engineSize;
             HorsePower = horsePower;

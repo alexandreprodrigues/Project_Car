@@ -7,9 +7,10 @@
         public string Color { get; set; }
         public double Weight { get; set; }
         public Engine Engine { get; set; }
-        public FuelTank FuelTank { get; set; }
+        public FuelTank? FuelTank { get; set; }
+        public Battery? Battery { get; set; }
 
-        public Car(string brand, string model, string color, double weight, Engine engine, FuelTank fuelTank)
+        public Car(string brand, string model, string color, double weight, Engine engine, FuelTank? fuelTank = null, Battery? battery = null)
         {
             Brand = brand;
             Model = model;
@@ -17,6 +18,7 @@
             Weight = weight;
             Engine = engine;
             FuelTank = fuelTank;
+            Battery = battery;
         }
 
         public void StartEngine()

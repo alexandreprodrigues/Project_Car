@@ -8,10 +8,10 @@ namespace Classes
         public double Capacity { get; set; }
         public double CurrentLevel { get; set; }
 
-        public FuelTank(string fuelType, double capacity) 
+        public FuelTank(string type, double capacity)
         {
             Capacity = capacity;
-            Type = fuelType;
+            Type = type;
             CurrentLevel = capacity;
         }
 
@@ -20,7 +20,7 @@ namespace Classes
             if (CurrentLevel + amount > Capacity)
             {
                 Console.WriteLine("Cannot fill more than the total capacity of the tank");
-            } 
+            }
             else
             {
                 CurrentLevel += amount;

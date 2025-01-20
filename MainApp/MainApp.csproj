@@ -7,8 +7,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Classes\Classes.csproj" />
+  <ItemGroup>   
     <ProjectReference Include="..\ClassLibrary\Classes.csproj" />
     <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
   </ItemGroup>
