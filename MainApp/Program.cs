@@ -1,5 +1,5 @@
 ﻿using Classes;
-using MainApp.Menus;
+using Menus;
 
 namespace MainApp
 {
@@ -32,12 +32,10 @@ namespace MainApp
                         case 1:
                             Console.Clear();
                             Console.WriteLine("dafsddssfs");
-                            Console.Clear();
                             break;
                         case 2:
                             Console.Clear();
                             Console.WriteLine("asdasdaadas");
-                            Console.Clear();
                             break;
                         case 3:
                             Console.Clear();

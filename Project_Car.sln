@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes", "ClassLibrary\Cla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{CCC313CC-0E16-4A5E-96F7-9B57E348123D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menus", "Menus\Menus.csproj", "{D53CE4C4-B592-4010-90F6-B98ECDD62DDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CCC313CC-0E16-4A5E-96F7-9B57E348123D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCC313CC-0E16-4A5E-96F7-9B57E348123D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCC313CC-0E16-4A5E-96F7-9B57E348123D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D53CE4C4-B592-4010-90F6-B98ECDD62DDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D53CE4C4-B592-4010-90F6-B98ECDD62DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D53CE4C4-B592-4010-90F6-B98ECDD62DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D53CE4C4-B592-4010-90F6-B98ECDD62DDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

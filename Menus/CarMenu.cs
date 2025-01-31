@@ -1,6 +1,6 @@
 ﻿using Classes;
 
-namespace MainApp.Menus
+namespace Menus
 {
     public static class CarMenu
     {
