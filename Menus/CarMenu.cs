@@ -49,59 +49,32 @@ namespace Menus
             Console.Clear();
             Console.WriteLine("-- Create a Car --\n");
 
-            Console.Write("Brand: ");
-            var brand = Console.ReadLine() ?? string.Empty;
+            string brand = ReadInput("Brand: ");
+            string model = ReadInput("Model: ");
+            string color = ReadInput("Color: ");
+            string weight = ReadInput("Weight (kg): ");
+            string engineSize = ReadInput("Engine Size: ");
+            string horsePower = ReadInput("Horse Power (HP): ");
 
-            Console.Write("Model: ");
-            var model = Console.ReadLine() ?? string.Empty;
-
-            Console.Write("Color: ");
-            var color = Console.ReadLine() ?? string.Empty;
-
-            Console.Write("Weight (kg): ");
-            var weightStr = Console.ReadLine() ?? "0";
-            double.TryParse(weightStr, out double weight);
-
-            Console.Write("Engine Size: ");
-            var engineSizeStr = Console.ReadLine() ?? "N/A";
-            double.TryParse(engineSizeStr, out double engineSize);
-
-            Console.Write("Horse Power (HP): ");
-            var horsePowerStr = Console.ReadLine() ?? "0";
-            double.TryParse(horsePowerStr, out double horsePower);
-
-            Console.Write("Fuel Tank (y/n): ");
-            var fuelTankAnswer = Console.ReadLine();
             FuelTank? fuelTankObj = null;
-
-            if (fuelTankAnswer?.ToLower() == "y")
+            if (ReadInput("Fuel Tank (y/n): ", "n").ToLower() == "y")
             {
-                Console.Write("  Type: ");
-                var fuelType = Console.ReadLine() ?? string.Empty;
-
-                Console.Write("  Capacity (L): ");
-                var fuelCapacityStr = Console.ReadLine() ?? "0";
-                if (double.TryParse(fuelCapacityStr, out double fuelCapacity))
+                string fuelType = ReadInput("  Type: ");
+                double? fuelCapacity = ReadDoubleInput("  Capacity (L): ");
+                if (fuelCapacity.HasValue)
                 {
-                    fuelTankObj = new FuelTank(fuelType, fuelCapacity);
+                    fuelTankObj = new FuelTank(fuelType, fuelCapacity.Value);
                 }
             }
 
-            Console.Write("Battery (y/n): ");
-            var batteryAnswer = Console.ReadLine();
             Battery? batteryObj = null;
-
-            if (batteryAnswer?.ToLower() == "y")
+            if (ReadInput("Battery (y/n): ", "n").ToLower() == "y")
             {
-                Console.Write("  Type: ");
-                var batteryType = Console.ReadLine() ?? string.Empty;
-
-                Console.Write("  Capacity (kWh): ");
-                var batteryCapacityStr = Console.ReadLine() ?? "0";
-
-                if (double.TryParse(batteryCapacityStr, out double batteryCapacity))
+                string batteryType = ReadInput("  Type: ");
+                double? batteryCapacity = ReadDoubleInput("  Capacity (kWh): ");
+                if (batteryCapacity.HasValue)
                 {
-                    batteryObj = new Battery(batteryType, batteryCapacity);
+                    batteryObj = new Battery(batteryType, batteryCapacity.Value);
                 }
             }
 
@@ -118,6 +91,23 @@ namespace Menus
             Console.WriteLine("\nCar created successfully!");
             Console.WriteLine("Press any key to return to the menu...");
             Console.ReadKey();
+
+            string ReadInput(string consoleMessage, string defaultValue = "N/A")
+            {
+                Console.Write(consoleMessage);
+                var userInput = Console.ReadLine();
+                return !string.IsNullOrEmpty(userInput) ? userInput : defaultValue;
+            }
+
+            double? ReadDoubleInput(string consoleMessage)
+            {
+                Console.Write(consoleMessage);
+                if (double.TryParse(Console.ReadLine(), out double value))
+                {
+                    return value;
+                }
+                return null;
+            }
         }
 
         private static void ViewCars(List<Car> cars)
@@ -137,7 +127,7 @@ namespace Menus
 
                 for (int i = 0; i < cars.Count; i++)
                 {
-                    Console.WriteLine($"{i + 1}. {cars[i].Brand} {cars[i].Model}");
+                    Console.WriteLine($"{i + 1}. {cars[i].Brand} {(cars[i].Model != "N/A" ? cars[i].Model : "")}");
                 }
 
                 Console.WriteLine($"{cars.Count + 1}. Go back");
@@ -181,23 +171,21 @@ namespace Menus
             Console.WriteLine($"Engine size: {car.Engine.EngineSize}");
             Console.WriteLine($"Horse power: {car.Engine.HorsePower} HP");
 
-            if (car.FuelTank != null)
-            {
-                Console.WriteLine($"Fuel Tank: {car.FuelTank.Type} ({car.FuelTank.Capacity} L)");
-            }
-            else
-            {
-                Console.WriteLine("Fuel Tank: N/A");
-            }
+            ShowComponent("Fuel Tank", car.FuelTank, car.FuelTank?.Type ?? "N/A", car.FuelTank?.Capacity ?? 0, "L");
+            ShowComponent("Battery", car.Battery, car.Battery?.Type ?? "N/A", car.Battery?.Capacity ?? 0, "kWh");
 
-            // Battery
-            if (car.Battery != null)
+            void ShowComponent(string name, object? component, string type, double capacity, string unit)
             {
-                Console.WriteLine($"Battery: {car.Battery.Type} ({car.Battery.Capacity} kWh)");
-            }
-            else
-            {
-                Console.WriteLine("Battery: N/A");
+                if (component != null)
+                {
+                    Console.WriteLine(!string.IsNullOrEmpty(type) && type != "N/A"
+                        ? $"{name}: {type} ({capacity} {unit})"
+                        : $"{name}: {capacity} {unit}");
+                }
+                else
+                {
+                    Console.WriteLine($"{name}: N/A");
+                }
             }
 
             Console.WriteLine("\nPress any key to return to the list...");

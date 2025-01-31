@@ -23,7 +23,7 @@ namespace Classes
             }
             else
             {
-                CurrentLevel += amount;   
+                CurrentLevel += amount;
 
                 Console.WriteLine($"Added {amount} litters to the tank. Tank: {CurrentLevel}");
             }

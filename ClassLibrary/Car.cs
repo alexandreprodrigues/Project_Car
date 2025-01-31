@@ -5,12 +5,12 @@
         public string Brand { get; set; }
         public string Model { get; set; }
         public string Color { get; set; }
-        public double Weight { get; set; }
+        public string Weight { get; set; }
         public Engine Engine { get; set; }
         public FuelTank? FuelTank { get; set; }
         public Battery? Battery { get; set; }
 
-        public Car(string brand, string model, string color, double weight, Engine engine, FuelTank? fuelTank = null, Battery? battery = null)
+        public Car(string brand, string model, string color, string weight, Engine engine, FuelTank? fuelTank = null, Battery? battery = null)
         {
             Brand = brand;
             Model = model;

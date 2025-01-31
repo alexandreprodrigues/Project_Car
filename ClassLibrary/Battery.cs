@@ -21,7 +21,7 @@ namespace Classes
             {
                 Console.WriteLine("Cannot charge more than the total capacity of the battery");
             }
-            else                        
+            else
             {
                 CurrentLevel += amount;
 
